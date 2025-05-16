@@ -28,7 +28,10 @@ SELECT
 FROM 
     Property p
 LEFT JOIN 
-    Review r ON p.property_id = r.property_id;
+    Review r ON p.property_id = r.property_id
+ORDER BY 
+    p.name ASC, r.rating DESC;
+
 
 -- 3. Outer JOIN
 SELECT 
