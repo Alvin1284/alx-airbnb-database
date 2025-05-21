@@ -163,6 +163,8 @@ ORDER BY
     b.start_date DESC
 LIMIT 100; 
 
-EXPLAIN SELECT * FROM Booking b
+EXPLAIN ANALYZE
+SELECT *
+FROM Booking b
 JOIN User u ON b.user_id = u.user_id
 WHERE b.start_date >= '2025-06-01' AND b.end_date <= '2025-06-30';
