@@ -22,4 +22,8 @@ CREATE INDEX idx_message_sent_at ON Message(sent_at);
 
 -- Indexes for Payment table
 CREATE INDEX idx_payment_booking ON Payment(booking_id);
-CREATE INDEX idx_payment_date ON Payment(payment_date); 
+CREATE INDEX idx_payment_date ON Payment(payment_date);
+
+EXPLAIN SELECT * FROM Booking b
+JOIN User u ON b.user_id = u.user_id
+WHERE b.start_date >= '2025-06-01' AND b.end_date <= '2025-06-30';
